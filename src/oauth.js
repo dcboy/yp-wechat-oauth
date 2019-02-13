@@ -172,6 +172,24 @@ class OAuth {
     return this.processToken(data);
   }
 
+  async getJscode2session (js_code) {
+    const info = {
+      appid: this.appid,
+      secret: this.appsecret,
+      js_code,
+      grant_type: 'authorization_code',
+    };
+
+    const url = `https://api.weixin.qq.com/sns/jscode2session?${querystring.stringify(info)}`;
+    const data = await this.request({
+      method: 'GET',
+      uri: url,
+      json: true,
+    });
+
+    return data;
+  }
+
   /**
    * 根据refresh token，刷新access token，调用getAccessToken后才有效
    * Examples:
