@@ -26,12 +26,12 @@
     "build"
   ],
   "dependencies": {
-    "expect.js": "^0.3.1",
-    "mocha": "^5.2.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.2"
   },
   "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^5.2.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "8.2.6",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
