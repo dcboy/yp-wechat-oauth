@@ -62,10 +62,13 @@ class OAuth {
    * @param {Object} opts urllib选项
    */
   async request (opts = {}) {
+    // 请求时间
+    opts = Object.assign({}, {
+      timeout: 3000
+    }, opts);
     var response;
     try {
       response = await request(opts);
-      console.log(response);
     } catch (err) {
       err.name = 'WeChatAPI' + err.name;
       throw err;
